@@ -18,11 +18,11 @@ function getPizza() {
   fetch(`/api/pizzas/${pizzaId}`)
     .then(response => {
       console.log(response);
-      // check for a 4xx or 5xx error server
       if (!response.ok) {
         console.log('hi');
         throw new Error({ message: 'Something went wrong!' });
       }
+
       return response.json();
     })
     .then(printPizza)
